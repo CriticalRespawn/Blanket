@@ -1,0 +1,13 @@
+<div id="posts" class="grid">
+
+    {{!-- Start looping through each post --}}    
+    {{#foreach posts }}
+
+        {{!-- The tag below contains the HTML for each post. You can find
+        it under /partials/post.hbs --}}            
+        {{> "post"}}     
+    {{/foreach}}
+     
+</div>
+
+{{pagination}}

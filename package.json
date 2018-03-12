@@ -1,0 +1,37 @@
+{
+    "name": "blanket",
+    "description": "An extremely simple blogging theme for Ghost",
+    "demo": "https://blanket.jonathanpurvis.co.uk/",
+    "version": "1.0.0",
+    "engines": {
+        "ghost": ">=1.0.0"
+    },
+    "license": "MIT",
+    "screenshots": {
+        "desktop": "assets/screenshot-desktop.png",
+        "mobile": "assets/mobile.png"
+    },
+    "author": {
+        "email": "blanket@jonathanpurvis.co.uk"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal",
+            "Personal Blogs"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/CriticalRespawn/Blanket.git"
+    },
+    "bugs": "https://github.com/CriticalRespawn/Blanket/issues",
+    "contributors": "https://github.com/CriticalRespawn/Blanket/graphs/contributors",
+    "config": {
+        "posts_per_page": 12
+    }
+}

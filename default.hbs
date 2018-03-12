@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+{{!-- Using the lang helper here allows for i18n to work --}}
+<html>
+    <head>
+
+        {{!-- Document Settings --}}
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+        {{!-- Base Meta --}}
+        <title>{{meta_title}}</title>
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        {{!-- Styles'n'Scripts. The asset helper is used when possible --}}
+        <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+        
+        {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+        {{ghost_head}}
+
+    </head>
+
+    <body>
+
+        {{!-- This block is the header, but only when you're on the homepage --}}
+        {{#is "home"}}
+            <div role='banner' class="main-header" {{#if @blog.cover_image}}style="background: url({{@blog.cover_image}}); filter: grayscale(100%);"{{/if}}>
+                
+                {{!-- Only show an image, if there is actually an image to show --}}
+                {{#if @blog.logo}}
+                    <div class="logo-container">
+                        <a href="{{@blog.url}}" class="logo" >
+                            <img src="{{@blog.logo}}" alt="{{@blog.title}}" />
+                        </a>
+                    </div>
+                {{/if}}
+                <a href="{{@blog.url}}" id="blog_title">
+                    <h1 class="blogtitle">{{{@blog.title}}}</h1>
+                </a>
+            </div>
+        {{/is}}
+
+        {{!-- If we are not on the homepage, this is the header --}}
+        <div class="sub-menu text-center">
+            {{^is "home"}}
+                <span id="blog-title">
+                    <a href="{{@blog.url}}">{{{@blog.title}}}</a>
+                </span>    
+            {{/is}}
+
+            {{!-- This pulls in the navigation from the site which can be edited in the 
+            "Design" section of the Ghost Admin. Blanket does not alter the structure of the navigation
+            so there's no overriden navigation.hbs file in this theme --}}
+            {{navigation}}
+        </div>
+
+        {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}        
+        {{{body}}}
+
+        {{!-- The footer at the very bottom of the screen --}}
+        <footer id="footer">
+            <div class="container">
+                <p id="site-name">Blanket by <a href="https://jonathanpurvis.co.uk/">Jon</a>.</p>
+                <p id="credit">Powered by <a href="http://ghost.org" target="_blank">Ghost</a></p>
+                <p id="social_links" class="text-center">
+
+                    {{!-- If a Facebook link is added to the Ghost Admin, show Facebook icon --}}
+                    {{#if @blog.facebook}}
+                        <a href="https://www.facebook.com/{{@blog.facebook}}" target="blank"><i class="fa fa-facebook fa-fw"></i></a>
+                    {{/if}} 
+
+                    {{!-- If a Twitter link is added to the Ghost Admin, show Twitter icon --}}
+                    {{#if @blog.twitter}}
+                        <a href="https://twitter.com/{{@blog.twitter}}" target="blank"><i class="fa fa-twitter fa-fw"></i></a>
+                    {{/if}}
+                    <a href="{{@blog.url}}/rss" target="blank"><i class="fa fa-rss fa-fw"></i></a>
+
+                    {{!-- Adds an envelope icon to the footer ONLY if "Subscribers" is turned on within
+                    the Labs section of the Admin --}}
+                    {{#if @labs.subscribers}}
+                        <a href="{{@blog.url}}/subscribe/"><i class="fa fa-envelope fa-fw"></i></a>
+                    {{/if}}
+                </p>  
+            </div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        
+        {{!-- Blanket uses the Prism syntax highligher in code blocks to
+        make it much easier to read code. --}}
+        <script src="{{asset "js/prism.js"}}"></script>
+
+        {{!-- This helper will pull in data from the {{contentFor}} helper in other 
+        template files. Useful for including scripts on certain pages and they 
+        will be loaded in AFTER jQuery has loaded --}}
+        {{{block "scripts"}}}
+
+        {{!-- Ghost outputs important scripts and data with this tag.
+        Do not move it from here, it should always be before the closing body tag --}}
+        {{ghost_foot}}
+
+    </body>
+</html>
+

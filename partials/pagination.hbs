@@ -1,0 +1,13 @@
+<div class="grid" id="grid-pagination">
+    <div class="col-1-2 push-1-4">
+        <nav class="pagination">
+            {{#if prev}}     
+                <a class="newer-posts" href="{{page_url prev}}">Newer</a>
+            {{/if}}           
+                <span class="page-number">Page {{page}} of {{pages}}</span>
+            {{#if next}}              
+                <a class="older-posts" href="{{page_url next}}">Older</a>
+            {{/if}}
+        </nav>
+    </div>
+</div>
