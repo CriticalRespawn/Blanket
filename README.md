@@ -1,15 +1,13 @@
 # Blanket
 Blanket is an extremely simple and minimalist theme for the [Ghost](http://github.com/tryghost/ghost/).
-
-
 ## Screenshots
 <table>
 <tr>
 <td valign="top">
-<img src="https://blanket.jonathanpurvis.co.uk/assets/desktop.png" />
+<img src="https://blanket.jonathanpurvis.co.uk/assets/desktop.png?v=2" />
 </td>
 <td valign="top">
-<img src="https://blanket.jonathanpurvis.co.uk/assets/mobile.png" />
+<img src="https://blanket.jonathanpurvis.co.uk/assets/mobile.png?v=2" />
 </td>
 </tr>
 </table>
