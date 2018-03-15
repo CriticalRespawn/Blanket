@@ -1,6 +1,7 @@
 # Blanket
 Blanket is an extremely simple and minimalist theme for the [Ghost](http://github.com/tryghost/ghost/).
 
+
 ## Screenshots
 <table>
 <tr>
