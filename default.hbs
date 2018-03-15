@@ -42,6 +42,9 @@
                 <a href="{{@blog.url}}" id="blog_title">
                     <h1 class="blogtitle">{{{@blog.title}}}</h1>
                 </a>
+                {{#if @blog.description}}
+                    <h2 class="site-description">{{@blog.description}}</h2>
+                {{/if}}    
             </div>
         {{/is}}
 

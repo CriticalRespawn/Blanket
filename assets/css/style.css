@@ -526,6 +526,12 @@ blockquote p {
 	font-size: 20px!important;
 }
 
+h2.site-description {
+	margin-top: 20px;
+	font-size: 18px;
+	text-shadow: 2px 2px 1px #000;
+}
+
 [class*='grid'],
 [class*='col-'],
 [class*='mobile-'],

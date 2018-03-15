@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - No longer getting reset.css via @import
 ### Fixed
 - Added encode helper to text when sharing an article on Twitter. The text would previously get cut off at certain symbols.
+### Added
+- Site Description into the header
 
 ## 1.0.0 - 2018-03-12
 - Initial Commit
