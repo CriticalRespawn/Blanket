@@ -6,7 +6,7 @@ into the {{{body}}} tag of the default.hbs template --}}
         <div class="container text-center">
             <div class="grid">
                 <div class="col-1-2 push-1-4">
-                    <h1>Something's gone wrong...</h1>
+                    <h1>{{t "Something's gone wrong..."}}</h1>
                 </div>    
             </div>
         </div>
@@ -15,8 +15,8 @@ into the {{{body}}} tag of the default.hbs template --}}
         <div class="grid">
             <div class="col-1-2 push-1-4 text-center">
                 <h2 class="shrug">¯\_(ツ)_/¯</h2>             
-                <p>Okay, so, something isn't working properly here. Odd.</p>
-                <a href="{{@blog.url}}">Take me Home!</a>
+                <p>{{t "Okay, so, something isn't working properly here. Odd."}}</p>
+                <a href="{{@blog.url}}">{{t "Take me Home!"}}</a>
             </div>
         </div>
     </div>

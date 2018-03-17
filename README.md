@@ -23,6 +23,7 @@ Blanket covers all the major pages you would find with any theme.
 
 ## Theme Features
 Whilst Blanket isn't as feature heavy as other Ghost themes, I believe this helps with the minimalist approach I took with the development of the theme:
+* i18n Support
 * Responsive Design
 * Author Archive
 * Tag Archive
@@ -62,6 +63,9 @@ I've developed Blanket to take into account all the instances where content will
 
 ## Contributing
 I welcome any contributions whether they are to fix an issue or to add something new to Blanket. Please note that my vision of this theme has, and always will be "simple". If your contibution means that Blanket starts to edge towards becoming complex, it may not be approved. Submit a PR though and we can work something out!
+
+If you wish to add a contribution in the form of additional i18n support, there's a ```en.json``` file within the ```locales``` directory, simply copy this file and
+change the translations into the language of your choice.
 
 ## Issues & Support
 Blanket has been tested on various platforms and devices however it's always possible bugs may have slipped through the net. If you spot an issue with Blanket you can either submit an issue here, on Github, or [Send me a Tweet](https://twitter.com/CriticalRespawn). Github is probably better though. 
