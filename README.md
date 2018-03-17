@@ -52,8 +52,11 @@ Blanket covers all the major pages you would find with any theme.
 ### Subscribers
 If you do not use the Ghost Labs subscribers feature, this isn't a problem. You don't need to make any changes to the code as Blanket checks to see whether this is enabled before showing a little envelope icon in the footer.
 
+### AMP (Accelerated Mobile Pages)
+Blanket supports Accelerated Mobile Pages, for more information [Visit the AMP Project Website](https://www.ampproject.org/). The only things to note here is if you're making changes in any file within the ```/assets/css/``` directory, you must also make these changes within the ```amp.hbs``` file too. If you're making any change to ```amp.hbs``` which you intend to open a PR for, you must check that the AMP Validation is successful.
+
 ### Grid System
-Blanket uses a [Simple Grid](http://thisisdallas.github.io/Simple-Grid/) because why bother reinventing the wheel? This solution works perfectly well in this case.
+Blanket uses [Simple Grid](http://thisisdallas.github.io/Simple-Grid/) for the Grid System because why bother reinventing the wheel? This solution works perfectly well in this case.
 
 ### Icons
 Blanket uses [Font Awesome](https://fontawesome.com/) for any icons.
