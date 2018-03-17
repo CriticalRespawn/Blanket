@@ -22,7 +22,7 @@ Blanket covers all the major pages you would find with any theme.
 * [404 Page](https://blanket.jonathanpurvis.co.uk/404/)
 
 ## Theme Features
-Whilst Blanket isn't as feature heavy as other Ghost themes, I believe this helps with the minimalist approach I took with the development of the theme:
+* AMP Support
 * i18n Support
 * Responsive Design
 * Author Archive

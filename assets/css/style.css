@@ -117,6 +117,7 @@ h6 {
 .tags-list {
 	margin-top: 15px;
 	margin-bottom: 15px;
+	line-height: 20px;
 }
 
 span#blog-title {
@@ -144,23 +145,20 @@ span#blog-title {
 	position: relative;
 	color: #ffffff;
 	background-color: #282D31;
-	background-size: cover !important;
-	background-position: center!important;
     overflow: hidden;
     padding: 50px 0 50px 0;
     text-align: center;
 }
 
 #footer {
-	position: absolute;
-	bottom: 0;
 	width: 100%;
 	height: 74px;
 	font-size: 12px;
 	background: rgba(0,0,0,.05);
 	padding: 50px 0px;
 	line-height: 25px;
-	clear:both; 
+	clear:both;
+	margin-bottom: -220px;
 }
 
 #footer i {
@@ -321,7 +319,6 @@ small {
 
 #post {
  	 text-align: left;
- 	 margin-bottom: 70px;
 }
 
 .section_title {
@@ -484,7 +481,6 @@ blockquote p {
 	margin: auto;
 	height: 250px;
 	background: rgba(0,0,0,.05);
-	background-size: cover!important;
 }
 
 #posts .image-link {
@@ -521,10 +517,6 @@ blockquote p {
 
 .text h5 {
 	line-height: 25px;
-}
-
-.featured {
-	font-size: 20px!important;
 }
 
 h2.site-description {
@@ -824,27 +816,12 @@ h2.site-description {
 		width: 58.33%
 	}
 
-	.hide-on-mobile {
-		display: none !important;
-		width: 0;
-		height: 0;
-	}
-
 	.sub-menu {
 		padding: 20px 0px;
 	}
 
-	#footer {
-		text-align: center;
-		padding: 50px 0px;
-	}
-
-	#site-name {
-		display: block;
-	}
-
 	#credit {
-		float: none;
+		float: right;
 	}
 
 	span#blog-title {
