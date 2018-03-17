@@ -29,7 +29,7 @@
 
         {{!-- This block is the header, but only when you're on the homepage --}}
         {{#is "home"}}
-            <div role='banner' class="main-header" {{#if @blog.cover_image}}style="background: url({{@blog.cover_image}}); filter: grayscale(100%);"{{/if}}>
+            <div role='banner' class="main-header" {{#if @blog.cover_image}}style="background: url({{@blog.cover_image}}); filter: grayscale(100%); background-size: cover; background-position: center;"{{/if}}>
                 
                 {{!-- Only show an image, if there is actually an image to show --}}
                 {{#if @blog.logo}}

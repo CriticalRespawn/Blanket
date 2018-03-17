@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## 1.1.5 - 2018-03-17
 ### Added
 - i18n support across the entire Blanket theme
+- Added AMP support
 
 ## 1.0.5 - 2018-03-15
 ### Fixed
