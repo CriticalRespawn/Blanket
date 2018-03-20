@@ -5,8 +5,8 @@ into the {{{body}}} tag of the default.hbs template --}}
 <div id="top_content" class="text-center">
     <div class="container">
         <div class="grid">           
-            <h1>Subscribe to {{@blog.title}}</h1>
-            <p>Get the latest posts from {{@blog.title}}, delivered straight to your inbox.</p>
+            <h1>{{t "Subscribe to"}} {{@blog.title}}</h1>
+            <p>{{t "Get the latest posts delivered straight to your inbox."}}</p>
         </div>
     </div>
 </div>
@@ -17,7 +17,7 @@ into the {{{body}}} tag of the default.hbs template --}}
             {{!-- If the user has managed to successfully submit the form, show them
             a success message to let them know it has worked --}}
             {{#if success}}
-                <p class="main-success">{You have successfully subscribed.</p>
+                <p class="main-success">{{t "You have successfully subscribed."}}</p>
             {{/if}}
 
             {{!-- This helper pulls in the form to the page. Blanket does not edit the form so this

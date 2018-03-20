@@ -2,11 +2,11 @@
     <div class="col-1-2 push-1-4">
         <nav class="pagination">
             {{#if prev}}     
-                <a class="newer-posts" href="{{page_url prev}}">Newer</a>
+                <a class="newer-posts" href="{{page_url prev}}">{{t "Newer"}}</a>
             {{/if}}           
-                <span class="page-number">Page {{page}} of {{pages}}</span>
+                <span class="page-number">{{t "Page"}} {{page}} {{t "of"}} {{pages}}</span>
             {{#if next}}              
-                <a class="older-posts" href="{{page_url next}}">Older</a>
+                <a class="older-posts" href="{{page_url next}}">{{t "Older"}}</a>
             {{/if}}
         </nav>
     </div>

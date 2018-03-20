@@ -12,7 +12,7 @@ into the {{{body}}} tag of the default.hbs template --}}
                     {{#if feature_image}}
                         <img src="{{img_url feature_image}}" class="top-post-image" alt="{{title}}" />
                     {{else}}
-                        <img src="{{asset "images/no_img.png"}}" class="top-post-image" alt="Missing Image" />
+                        <img src="{{asset "images/no_img.png"}}" class="top-post-image" alt="{{t "Missing Image"}}" />
                     {{/if}}  
                 <h1>
                     {{title}}
@@ -42,12 +42,12 @@ into the {{{body}}} tag of the default.hbs template --}}
 <div id="post" class="container">
     <div class="grid">
         <div class="col-8-12 push-2-12">
-            {{content}}
+            {{amp_content}}
 
             {{!-- Only load in any tag content, if the post actually has tags --}}
             {{#if tags}}
                 <div class="tags-list">
-                    Tags: {{tags separator=", "}}
+                    {{t "Tags:"}}" {{tags separator=", "}}
                 </div>
             {{/if}}
         
