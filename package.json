@@ -2,15 +2,11 @@
     "name": "blanket",
     "description": "An extremely simple blogging theme for Ghost",
     "demo": "https://blanket.jonathanpurvis.co.uk/",
-    "version": "1.1.5",
+    "version": "1.1.7",
     "engines": {
         "ghost": ">=1.0.0"
     },
     "license": "MIT",
-    "screenshots": {
-        "desktop": "assets/screenshot-desktop.png",
-        "mobile": "assets/mobile.png"
-    },
     "author": {
         "email": "blanket@jonathanpurvis.co.uk"
     },
