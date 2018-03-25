@@ -1,16 +1,5 @@
 # Blanket
 Blanket is an extremely simple and minimalist theme for the [Ghost](http://github.com/tryghost/ghost/).
-## Screenshots
-<table>
-<tr>
-<td valign="top">
-<img src="https://blanket.jonathanpurvis.co.uk/assets/desktop.png?v=2" />
-</td>
-<td valign="top">
-<img src="https://blanket.jonathanpurvis.co.uk/assets/mobile.png?v=2" />
-</td>
-</tr>
-</table>
 
 ## Demo
 Blanket covers all the major pages you would find with any theme.
@@ -31,6 +20,7 @@ Blanket covers all the major pages you would find with any theme.
 * Subscribers Support
 * Post Sharing Support
 * Syntax Highlighting using [Prism JS](http://prismjs.com/)
+* Reading Time Support
 
 ## Install Guide
 ### Git Install
