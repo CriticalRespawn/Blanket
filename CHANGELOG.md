@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 1.1.7 - 2018-03-25
+### Removed
+- Post images from the post grid as they took up too much room
+- Example screenshots because a working demo exists
+### Changed
+- Increased the padding of .overlay class to allow text to have a bit more breathing room
+
 ## 1.1.5 - 2018-03-17
 ### Added
 - i18n support across the entire Blanket theme
