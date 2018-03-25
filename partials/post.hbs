@@ -2,13 +2,7 @@
     <a href="{{{url}}}" class="image-link">
         <div class="image" style="background: url('{{img_url feature_image absolute="true"}}'); background-size: cover;"></div>
         <div class="overlay">
-            <div class="text">
-                    {{!-- It's possible a post doesn't have a feature image, if not, show a placeholder image instead  --}} 
-                    {{#if feature_image}}
-                        <img src="{{img_url feature_image}}" class="top-post-image" alt="{{title}}" />
-                    {{else}}
-                        <img src="{{asset "images/no_img.png"}}" class="top-post-image" alt="{{t "Missing Image"}}" />
-                    {{/if}}                 
+            <div class="text">               
                 <h5>
                     {{title}} 
 
@@ -19,7 +13,7 @@
                     
                     {{!-- If you are changing this date format, you should also 
                     change it in /post.hbs for consistency --}}
-                    <small>{{date format='DD MMM YYYY'}}</small> 
+                    <small>{{date format='DD MMM YYYY'}} | {{reading_time}}</small> 
 
                     {{!-- Everything inside the {author} tags pulls the specified data from the author --}} 
                     {{#author}}
