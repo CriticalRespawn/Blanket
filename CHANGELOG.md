@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 1.1.9 - 2018-03-26
+### Changed
+- Actually increased the padding of .overlay class to allow text to have a bit more breathing room
+- Credit link to point to the Github repo
+- "Blanket by" translation to just "Blanket" 
+### Added
+- Translation for "Theme" in the footer
+
 ## 1.1.7 - 2018-03-25
 ### Removed
 - Post images from the post grid as they took up too much room
