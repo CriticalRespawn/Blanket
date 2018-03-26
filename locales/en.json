@@ -3,7 +3,8 @@
     "Missing Image" : "Missing Image",
     "Facebook" : "Facebook",
     "Twitter" : "Twitter",
-    "Blanket by" : "Blanket by",
+    "Blanket" : "Blanket",
+    "Theme" : "Theme",
     "Powered by" : "Powered by",
     "Something's gone wrong..." : "Something's gone wrong...",
     "Okay, so, something isn't working properly here. Odd." : "Okay, so, something isn't working properly here. Odd.",
@@ -17,4 +18,5 @@
     "of" : "of",
     "Older" : "Older",
     "Share:" : "Share:"
+
 }
