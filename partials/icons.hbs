@@ -1,0 +1,16 @@
+{{!-- If a Facebook link is added to the Ghost Admin, show Facebook icon --}}
+{{#if @blog.facebook}}
+    <a href="https://www.facebook.com/{{@blog.facebook}}" target="blank"><i class="fa fa-facebook fa-fw"></i></a>
+{{/if}} 
+
+{{!-- If a Twitter link is added to the Ghost Admin, show Twitter icon --}}
+{{#if @blog.twitter}}
+    <a href="https://twitter.com/{{@blog.twitter}}" target="blank"><i class="fa fa-twitter fa-fw"></i></a>
+{{/if}}
+
+<a href="{{@blog.url}}/rss" target="blank"><i class="fa fa-rss fa-fw"></i></a>
+
+{{!-- Adds an envelope icon ONLY if "Subscribers" is turned on within the Labs section of the Admin --}}
+{{#if @labs.subscribers}}
+    <a href="{{@blog.url}}/subscribe/"><i class="fa fa-envelope fa-fw"></i></a>
+{{/if}}

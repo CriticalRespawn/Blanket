@@ -29,38 +29,65 @@
 
         {{!-- This block is the header, but only when you're on the homepage --}}
         {{#is "home"}}
-            <div role='banner' class="main-header" {{#if @blog.cover_image}}style="background: url({{@blog.cover_image}}); filter: grayscale(100%); background-size: cover; background-position: center;"{{/if}}>
+        <div role='banner' class="main-header" {{#if @blog.cover_image}}style="background: url({{@blog.cover_image}}); filter: grayscale(100%); background-size: cover; background-position: center;"{{/if}}>
                 
-                {{!-- Only show an image, if there is actually an image to show --}}
-                {{#if @blog.logo}}
-                    <div class="logo-container">
-                        <a href="{{@blog.url}}" class="logo" >
-                            <img src="{{@blog.logo}}" alt="{{@blog.title}}" />
+            <div class="container">
+                <div class="grid">
+                    <div class="col-1-1">
+                        {{!-- Only show an image, if there is actually an image to show --}}
+                        {{#if @blog.logo}}
+                        <div class="logo-container">
+                            <a href="{{@blog.url}}" class="logo" >
+                                <img src="{{@blog.logo}}" alt="{{@blog.title}}" />
+                            </a>
+                        </div>
+                        {{/if}}
+                        <a href="{{@blog.url}}" id="blog_title">
+                            <h1 class="blogtitle">{{{@blog.title}}}</h1>
                         </a>
+                        {{#if @blog.description}}
+                        <h2 class="site-description">{{@blog.description}}</h2>
+                        {{/if}}   
                     </div>
-                {{/if}}
-                <a href="{{@blog.url}}" id="blog_title">
-                    <h1 class="blogtitle">{{{@blog.title}}}</h1>
-                </a>
-                {{#if @blog.description}}
-                    <h2 class="site-description">{{@blog.description}}</h2>
-                {{/if}}    
+                </div>
             </div>
+        
+        </div>
         {{/is}}
 
         {{!-- If we are not on the homepage, this is the header --}}
-        <div class="sub-menu text-center">
-            {{^is "home"}}
-                <span id="blog-title">
-                    <a href="{{@blog.url}}">{{{@blog.title}}}</a>
-                </span>    
-            {{/is}}
-
-            {{!-- This pulls in the navigation from the site which can be edited in the 
-            "Design" section of the Ghost Admin. Blanket does not alter the structure of the navigation
-            so there's no overriden navigation.hbs file in this theme --}}
-            {{navigation}}
+        <div id="sub-menu" class="container-fluid">
+            <div class="grid">
+                <div class="col-1-1 text-center">
+                    {{^is "home"}}
+                    <span id="blog-title">
+                        <a href="{{@blog.url}}">{{{@blog.title}}}</a>
+                    </span>    
+                    {{/is}}
+                    {{!-- This pulls in the navigation from the site which can be edited in the 
+                    "Design" section of the Ghost Admin. Blanket does not alter the structure of the navigation
+                    so there's no overriden navigation.hbs file in this theme --}}
+                    {{navigation}}
+                </div>
+            </div>
         </div>
+
+        {{#is "home"}}
+        <div id="search" class="container-fluid">
+            <div class="grid">
+                <div class="col-1-2 push-1-4">
+                    <form>
+                        <input id="search-field" placeholder="Enter Search Term..."/ autocomplete="off">
+                    </form>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="col-1-1">
+                    <section id="results"></section>
+                </div>
+            </div>
+        </div>
+        {{/is}}
 
         {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}        
         {{{body}}}
@@ -71,28 +98,27 @@
                 <p id="site-name"><a href="https://github.com/CriticalRespawn/Blanket" target="_blank">{{t "Blanket"}}</a> {{t "Theme"}}.</p>
                 <p id="credit">{{t "Powered by"}} <a href="http://ghost.org" target="_blank">Ghost</a></p>
                 <p id="social_links" class="text-center">
-
-                    {{!-- If a Facebook link is added to the Ghost Admin, show Facebook icon --}}
-                    {{#if @blog.facebook}}
-                        <a href="https://www.facebook.com/{{@blog.facebook}}" target="blank"><i class="fa fa-facebook fa-fw"></i></a>
-                    {{/if}} 
-
-                    {{!-- If a Twitter link is added to the Ghost Admin, show Twitter icon --}}
-                    {{#if @blog.twitter}}
-                        <a href="https://twitter.com/{{@blog.twitter}}" target="blank"><i class="fa fa-twitter fa-fw"></i></a>
-                    {{/if}}
-                    <a href="{{@blog.url}}/rss" target="blank"><i class="fa fa-rss fa-fw"></i></a>
-
-                    {{!-- Adds an envelope icon to the footer ONLY if "Subscribers" is turned on within
-                    the Labs section of the Admin --}}
-                    {{#if @labs.subscribers}}
-                        <a href="{{@blog.url}}/subscribe/"><i class="fa fa-envelope fa-fw"></i></a>
-                    {{/if}}
+                    {{> "icons"}}
                 </p>  
             </div>
         </footer>
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="{{asset "ghostHunter/dist/jquery.ghosthunter.js"}}"></script>
+
+  <script>
+    $("#search-field").ghostHunter({
+      results: "#results",
+      onKeyUp: true,
+      zeroResultsInfo: false,  
+    });
+  </script>   
+
+    <style>
+      #results {
+          
+      }
+  </style>     
         
         {{!-- Blanket uses the Prism syntax highligher in code blocks to
         make it much easier to read code. --}}

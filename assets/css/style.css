@@ -146,7 +146,7 @@ span#blog-title {
 	color: #ffffff;
 	background-color: #282D31;
     overflow: hidden;
-    padding: 50px 0 50px 0;
+    padding: 25px 0 25px 0;
     text-align: center;
 }
 
@@ -179,6 +179,14 @@ span#blog-title {
     margin-left: auto;
 }
 
+.container-fluid {
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .main-header .logo-container {
    display: block;
    width: 100%;
@@ -194,7 +202,7 @@ span#blog-title {
 	margin-bottom: 30px;
 }
 
-.sub-menu {
+#sub-menu {
 	background-color: #282D31;
 	padding: 25px 100px;
 }
@@ -348,7 +356,8 @@ small {
 	padding: 0px 10px;
 }
 
-.subscribe-email {
+.subscribe-email,
+#search-field {
 	display: block;
 	width: 100%;
 	padding: .375rem .75rem;
@@ -356,6 +365,21 @@ small {
 	line-height: 1.5;
 	border: 1px solid #ced4da;
 	border-radius: .25rem;
+}
+
+.success {
+	color: green;
+}
+
+.posts-found {
+	margin: 1.5rem 0;
+	text-decoration: underline;
+}
+
+.gh-search-item-post-date {
+	margin-top: -10px;
+	text-decoration: none;
+	color: #3a3a3a;
 }
 
 button {
@@ -553,11 +577,20 @@ h2.site-description {
   	padding-right: 0;
 }
 
+#posts {
+	margin: 50px 0;
+}
+
+#search {
+	background: rgba(0,0,0,.05);
+	padding: 50px 100px;
+	border-bottom: 1px solid #ced4da
+}
+
 .grid {
-	width: 100%;
+	/* width: 100%;
 	max-width: 1140px;
 	min-width: 748px; /* when using padded grid on ipad in portrait mode, width should be viewport-width - padding = (768 - 20) = 748. actually, it should be even smaller to allow for padding of grid containing element */
-	margin: 50px auto;
 	clear: both;
 }
 
@@ -822,7 +855,7 @@ h2.site-description {
 		width: 58.33%
 	}
 
-	.sub-menu {
+	#sub-menu {
 		padding: 20px 0px;
 	}
 
