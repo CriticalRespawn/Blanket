@@ -16,6 +16,7 @@
         {{!-- Styles'n'Scripts. The asset helper is used when possible --}}
         <link rel="stylesheet" type="text/css" href="{{asset "css/reset.css"}}" />
         <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset "css/rwdgrid.css"}}" />
         <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
@@ -32,23 +33,19 @@
         <div role='banner' class="main-header" {{#if @blog.cover_image}}style="background: url({{@blog.cover_image}}); filter: grayscale(100%); background-size: cover; background-position: center;"{{/if}}>
                 
             <div class="container">
-                <div class="grid">
-                    <div class="col-1-1">
-                        {{!-- Only show an image, if there is actually an image to show --}}
-                        {{#if @blog.logo}}
-                        <div class="logo-container">
-                            <a href="{{@blog.url}}" class="logo" >
-                                <img src="{{@blog.logo}}" alt="{{@blog.title}}" />
-                            </a>
-                        </div>
-                        {{/if}}
-                        <a href="{{@blog.url}}" id="blog_title">
-                            <h1 class="blogtitle">{{{@blog.title}}}</h1>
-                        </a>
-                        {{#if @blog.description}}
-                        <h2 class="site-description">{{@blog.description}}</h2>
-                        {{/if}}   
-                    </div>
+                <div class="grid-12">
+                    {{!-- Only show an image, if there is actually an image to show --}}
+                    {{#if @blog.logo}}
+                    <a href="{{@blog.url}}" class="logo" >
+                        <img src="{{@blog.logo}}" alt="{{@blog.title}}" />
+                    </a>
+                    {{/if}}
+                    <a href="{{@blog.url}}" id="blog_title">
+                        <h1 class="blogtitle">{{{@blog.title}}}</h1>
+                    </a>
+                    {{#if @blog.description}}
+                    <h2 class="site-description">{{@blog.description}}</h2>
+                    {{/if}}   
                 </div>
             </div>
         
@@ -57,30 +54,28 @@
 
         {{!-- If we are not on the homepage, this is the header --}}
         <div id="sub-menu" class="container-fluid">
-            <div class="grid">
-                <div class="col-1-1 text-center">
-                    {{^is "home"}}
-                    <span id="blog-title">
-                        <a href="{{@blog.url}}">{{{@blog.title}}}</a>
-                    </span>    
-                    {{/is}}
-                    {{!-- This pulls in the navigation from the site which can be edited in the 
-                    "Design" section of the Ghost Admin. Blanket does not alter the structure of the navigation
-                    so there's no overriden navigation.hbs file in this theme --}}
-                    {{navigation}}
-                </div>
+            <div class="grid-12 text-center">
+                {{^is "home"}}
+                <span id="blog-title">
+                    <a href="{{@blog.url}}">{{{@blog.title}}}</a>
+                </span>    
+                {{/is}}
+                {{!-- This pulls in the navigation from the site which can be edited in the 
+                "Design" section of the Ghost Admin. Blanket does not alter the structure of the navigation
+                so there's no overriden navigation.hbs file in this theme --}}
+                {{navigation}}
             </div>
         </div>
 
         {{#is "home"}}
         <div id="search" class="container-fluid">
-            <div class="grid">
-                <div class="col-1-2 push-1-4">
-                    <form>
-                        <input id="search-field" placeholder="Enter Search Term..."/ autocomplete="off">
-                    </form>
-                </div>
+            <div class="grid-4"></div>
+            <div class="grid-4">
+                <form>
+                    <input id="search-field" placeholder="Enter Search Term..."/ autocomplete="off">
+                </form>        
             </div>
+            <div class="grid-4"></div>
             <div class="grid">
                 <div class="col-1-1">
                     <section id="results"></section>
