@@ -69,13 +69,11 @@
 
         {{#is "home"}}
         <div id="search" class="container-fluid">
-            <div class="grid-4"></div>
-            <div class="grid-4">
+            <div class="grid-4 clear-grid center-content">
                 <form>
-                    <input id="search-field" placeholder="Enter Search Term..."/ autocomplete="off">
+                    <input id="search-field" placeholder="Search {{{@blog.title}}}..."/ autocomplete="off">
                 </form>        
             </div>
-            <div class="grid-4"></div>
             <div class="grid">
                 <div class="col-1-1">
                     <section id="results"></section>
@@ -105,15 +103,10 @@
     $("#search-field").ghostHunter({
       results: "#results",
       onKeyUp: true,
-      zeroResultsInfo: false,  
+      zeroResultsInfo: false, 
+      displaySearchInfo: false,
     });
   </script>   
-
-    <style>
-      #results {
-          
-      }
-  </style>     
         
         {{!-- Blanket uses the Prism syntax highligher in code blocks to
         make it much easier to read code. --}}
@@ -130,4 +123,3 @@
 
     </body>
 </html>
-

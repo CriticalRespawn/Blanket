@@ -1,8 +1,8 @@
 html {
-	position: relative;
-	min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
-  
+
 body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
@@ -195,7 +195,7 @@ span#blog-title {
 
 #sub-menu {
 	background-color: #282D31;
-	padding: 25px 100px;
+	padding: 15px 100px;
 }
 
 .nav {
@@ -350,11 +350,13 @@ small {
 #search-field {
 	display: block;
 	width: 100%;
+	font-weight: lighter;
 	padding: .375rem .75rem;
-	font-size: 1rem;
+	font-size: 14px;
 	line-height: 1.5;
 	border: 1px solid #ced4da;
-	border-radius: .25rem;
+	border-radius: 0;
+	outline: none;
 }
 
 button {
@@ -525,15 +527,6 @@ h2.site-description {
 	line-height: 25px;
 }
 
-.success {
-	color: green;
-}
-
-.posts-found {
-	margin: 1.5rem 0;
-	text-decoration: underline;
-}
-
 .gh-search-item-post-date {
 	margin-top: -10px;
 	text-decoration: none;
@@ -546,7 +539,7 @@ h2.site-description {
 
 #search {
 	background: rgba(0,0,0,.05);
-	padding: 50px 100px;
+	padding: 30px 100px;
 	border-bottom: 1px solid #ced4da
 }
 
