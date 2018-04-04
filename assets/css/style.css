@@ -1,6 +1,6 @@
 html {
-    position: relative;
-    min-height: 100%;
+  position: relative;
+  min-height: 100%;
 }
 
 body {
@@ -26,16 +26,16 @@ a {
 
 p {
 	line-height: 22px;
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 ul,
 ol {
-	margin-left: 0px;
+    margin-left: 0px;
 }
 
 .container li {
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .container img {
@@ -136,9 +136,9 @@ span#blog-title {
 	position: relative;
 	color: #ffffff;
 	background-color: #282D31;
-	overflow: hidden;
-	padding: 25px 0 25px 0;
-	text-align: center;
+    overflow: hidden;
+    padding: 25px 0 25px 0;
+    text-align: center;
 }
 
 #footer {
@@ -154,8 +154,8 @@ span#blog-title {
 }
 
 #footer i {
-	font-size: 20px;
-	padding: 5px;
+    font-size: 20px;
+    padding: 5px;
 }
 
 #footer a i {
@@ -163,15 +163,15 @@ span#blog-title {
 }
 
 .container {
-	max-width: 1140px;
-	padding-right: 15px;
-	padding-left: 15px;
-	margin-right: auto;
-	margin-left: auto;
+    max-width: 1140px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .container-fluid {
-	max-width: 100%;
+    max-width: 100%;
 	padding-right: 15px;
 	padding-left: 15px;
 	margin-right: auto;
@@ -179,8 +179,8 @@ span#blog-title {
 }
 
 .main-header .logo-container {
-	display: block;
-	width: 100%;
+   display: block;
+   width: 100%;
 }
 
 .main-header img {
@@ -240,7 +240,7 @@ span#blog-title {
 	padding: 50px;
 	max-width: 1140px;
 	margin: 0 auto;
-	text-align: center;
+    text-align: center;
 }
 
 #share {
@@ -297,7 +297,7 @@ a.newer-posts {
 }
 
 .text-center {
-	text-align: center;
+  	text-align: center;
 }
 
 .fa-star {
@@ -313,17 +313,17 @@ small {
 }
 
 .post a:hover {
-	text-decoration: none;
+  	text-decoration: none;
 }
 
 #post {
-	text-align: left;
+ 	 text-align: left;
 }
 
 .section_title {
-	font-size: 20px;
-	padding-bottom: 40px;
-	text-align: center;
+  	font-size: 20px;
+  	padding-bottom: 40px;
+  	text-align: center;
 }
 
 .push-right {
@@ -488,9 +488,9 @@ blockquote p {
 	overflow: hidden;
 	margin-bottom: 20px;
 }
-
+  
 .overlay {
-	position: absolute;
+    position: absolute;
 	display: flex;
 	margin: auto;
 	justify-content: center;
@@ -505,11 +505,11 @@ blockquote p {
 	background: rgba(0,0,0,0.8);
 	padding: 35px;
 }
-
+  
 #posts .image-link:hover .overlay {
 	background: rgba(0,0,0,0.9);
 }
-
+  
 .text {
 	color: white;
 	font-size: 20px;
@@ -528,7 +528,7 @@ h2.site-description {
 }
 
 .gh-search-item-post-date {
-	margin-top: -10px;
+    margin-top: 5px;
 	text-decoration: none;
 	color: #3a3a3a;
 }
@@ -541,6 +541,10 @@ h2.site-description {
 	background: rgba(0,0,0,.05);
 	padding: 30px 100px;
 	border-bottom: 1px solid #ced4da
+}
+
+#results {
+	padding-top: 20px;
 }
 
 @media handheld, only screen and (max-width: 767px) {
