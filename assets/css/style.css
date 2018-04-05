@@ -7,7 +7,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
 	color: #3a3a3a;
-	margin-bottom: 220px;
+	margin-bottom: 320px;
 }
 
 #top_content h1 {
@@ -144,18 +144,12 @@ span#blog-title {
 #footer {
 	position: absolute;
 	width: 100%;
-	height: 74px;
 	font-size: 12px;
 	background: rgba(0,0,0,.05);
 	padding: 50px 0px;
 	line-height: 25px;
 	clear:both;
 	bottom: 0;
-}
-
-#footer i {
-    font-size: 20px;
-    padding: 5px;
 }
 
 #footer a i {
@@ -253,14 +247,9 @@ strong {
 	font-weight: bold;
 }
 
+#site-name,
 #credit {
-	display: inline;
-	float: right;
-	margin: 0;
-}
-
-#site-name {
-	display: inline;
+	display: block;
 	margin: 0;
 }
 
@@ -541,13 +530,22 @@ h2.site-description {
 	padding-top: 20px;
 }
 
+#footer h4 {
+	margin-bottom: 15px;
+}
+
+#footer .recent-posts a {
+	display: block;
+}
+
+#footer .social-links i {
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+
 @media handheld, only screen and (max-width: 767px) {
 	#sub-menu {
 		padding: 20px 0px;
-	}
-
-	#credit {
-		float: right;
 	}
 
 	span#blog-title {
@@ -576,5 +574,22 @@ h2.site-description {
 
 	#search {
 		padding: 10px 20px;
+	}
+
+	#footer .recent-posts,
+	#footer .tags {
+		display: none;
+	}
+
+	#footer h4 {
+		display: none;
+	}
+
+	#footer {
+		padding: 30px;
+	}
+
+	body {
+		margin-bottom: 195px;
 	}
 }

@@ -88,11 +88,34 @@
         {{!-- The footer at the very bottom of the screen --}}
         <footer id="footer">
             <div class="container">
-                <p id="site-name"><a href="https://github.com/CriticalRespawn/Blanket" target="_blank">{{t "Blanket"}}</a> {{t "Theme"}}.</p>
-                <p id="credit">{{t "Powered by"}} <a href="http://ghost.org" target="_blank">Ghost</a></p>
-                <p id="social_links" class="text-center">
-                    {{> "icons"}}
-                </p>  
+                <div class="grid-4 text-center recent-posts">
+                    {{#get "posts" limit="5" as |recents|}}
+                    <section>
+                        <h4>Recent posts</h4>
+                        {{#foreach recents}}
+                            <a href="{{url}}">{{title}}</a>
+                        {{/foreach}}
+                    </section>
+                    {{/get}}
+                </div>
+                <div class="grid-4 text-center tags">
+                    {{#get "tags" limit="10" include="count.posts" order="count.posts desc" filter = "slug:-tag_of_pages1+slug:-tag_of_pages2"}}
+                    <section>
+                        <h4>Tags</h4>
+                        {{#foreach tags}}
+                            <a href="/tag/{{slug}}">{{name}}</a>
+                        {{/foreach}}
+                    </section>
+                    {{/get}}
+                </div>
+                <div class="grid-4 text-center social-links">
+                    <section>
+                        <h4>Social</h4>
+                        {{> "icons"}}
+                        <p id="site-name"><a href="https://github.com/CriticalRespawn/Blanket" target="_blank">{{t "Blanket"}}</a> {{t "Theme"}}.</p>
+                        <p id="credit">{{t "Powered by"}} <a href="http://ghost.org" target="_blank">Ghost</a></p>
+                    </section>
+                </div>                                
             </div>
         </footer>
 
