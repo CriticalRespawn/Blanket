@@ -13,11 +13,13 @@
         <meta name="HandheldFriendly" content="True" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
+        
         {{!-- Styles'n'Scripts. The asset helper is used when possible --}}
         <link rel="stylesheet" type="text/css" href="{{asset "css/reset.css"}}" />
-        <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
+        <!--<link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />-->
         <link rel="stylesheet" type="text/css" href="{{asset "css/rwdgrid.css"}}" />
         <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset "css/hover.min.css"}}" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
         
@@ -28,112 +30,250 @@
 
     <body>
 
-        {{!-- This block is the header, but only when you're on the homepage --}}
-        {{#is "home"}}
-        <div role='banner' class="main-header" {{#if @blog.cover_image}}style="background: url({{@blog.cover_image}}); filter: grayscale(100%); background-size: cover; background-position: center;"{{/if}}>
-                
-            <div class="container">
-                <div class="grid-12">
-                    {{!-- Only show an image, if there is actually an image to show --}}
-                    {{#if @blog.logo}}
-                    <a href="{{@blog.url}}" class="logo" >
-                        <img src="{{@blog.logo}}" alt="{{@blog.title}}" />
-                    </a>
-                    {{/if}}
-                    <a href="{{@blog.url}}" id="blog_title">
-                        <h1 class="blogtitle">{{{@blog.title}}}</h1>
-                    </a>
-                    {{#if @blog.description}}
-                    <h2 class="site-description">{{@blog.description}}</h2>
-                    {{/if}}   
-                </div>
+        <nav id="menu">
+            <div class="logo-container text-center" {{#if @blog.cover_image}}style="background: url({{@blog.cover_image}}); background-size: cover; background-position: center;"{{/if}}>
+                {{#if @blog.logo}}
+                <a href="{{@blog.url}}" class="logo" >
+                    <img src="{{@blog.logo}}" alt="{{@blog.title}}" />
+                </a>
+                {{/if}}
+                <span class="blog-title">
+                    {{@blog.title}}
+                </span>
+                {{#if @blog.description}}
+                    <span class="blog-description">{{@blog.description}}</span>
+                {{/if}}  
             </div>
-        
-        </div>
-        {{/is}}
-
-        {{!-- If we are not on the homepage, this is the header --}}
-        <div id="sub-menu" class="container-fluid">
-            <div class="grid-12 text-center">
-                {{^is "home"}}
-                <span id="blog-title">
-                    <a href="{{@blog.url}}">{{{@blog.title}}}</a>
-                </span>    
-                {{/is}}
-                {{!-- This pulls in the navigation from the site which can be edited in the 
-                "Design" section of the Ghost Admin. Blanket does not alter the structure of the navigation
-                so there's no overriden navigation.hbs file in this theme --}}
-                {{navigation}}
+            {{navigation}}
+            <div class="menu-bottom-links text-center">
+                {{> "icons"}}
+                <p><a href="https://github.com/CriticalRespawn/Blanket" target="_blank">{{t "Blanket"}}</a> {{t "Theme"}}.</p>
+                <p>{{t "Powered by"}} <a href="http://ghost.org" target="_blank">Ghost</a></p>
             </div>
-        </div>
+        </nav>
 
-        {{#is "home"}}
-        <div id="search" class="container-fluid">
-            <div class="grid-4 clear-grid center-content">
-                <form>
-                    <input id="search-field" placeholder="{{t "Search"}}..."/ autocomplete="off">
-                </form>        
-            </div>
-            <div class="grid">
-                <div class="col-1-1">
-                    <section id="results"></section>
-                </div>
-            </div>
-        </div>
-        {{/is}}
+        <main id="content">
+            <header>
+                <i class="fa fa-bars fa-2x toggle-button"></i>
+            </header>
+            {{{body}}}
+        </main>
 
-        {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}        
-        {{{body}}}
-
-        {{!-- The footer at the very bottom of the screen --}}
-        <footer id="footer">
-            <div class="container">
-                <div class="grid-4 text-center recent-posts">
-                    {{#get "posts" limit="5" as |recents|}}
-                    <section>
-                        <h4>Recent posts</h4>
-                        {{#foreach recents}}
-                            <a href="{{url}}">{{title}}</a>
-                        {{/foreach}}
-                    </section>
-                    {{/get}}
-                </div>
-                <div class="grid-4 text-center tags">
-                    {{#get "tags" limit="10" include="count.posts" order="count.posts desc" filter = "slug:-tag_of_pages1+slug:-tag_of_pages2"}}
-                    <section>
-                        <h4>Tags</h4>
-                        {{#foreach tags}}
-                            <a href="/tag/{{slug}}">{{name}}</a>
-                        {{/foreach}}
-                    </section>
-                    {{/get}}
-                </div>
-                <div class="grid-4 text-center social-links">
-                    <section>
-                        <h4>Social</h4>
-                        {{> "icons"}}
-                        <p id="site-name"><a href="https://github.com/CriticalRespawn/Blanket" target="_blank">{{t "Blanket"}}</a> {{t "Theme"}}.</p>
-                        <p id="credit">{{t "Powered by"}} <a href="http://ghost.org" target="_blank">Ghost</a></p>
-                    </section>
-                </div>                                
-            </div>
-        </footer>
-
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="{{asset "ghostHunter/dist/jquery.ghosthunter.js"}}"></script>
-
-  <script>
-    $("#search-field").ghostHunter({
-      results: "#results",
-      onKeyUp: true,
-      zeroResultsInfo: false, 
-      displaySearchInfo: false,
-    });
-  </script>   
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>  
         
         {{!-- Blanket uses the Prism syntax highligher in code blocks to
         make it much easier to read code. --}}
         <script src="{{asset "js/prism.js"}}"></script>
+        <script src="{{asset "js/slideout.min.js"}}"></script>
+
+    <script>
+      var slideout = new Slideout({
+        'panel': document.getElementById('content'),
+        'menu': document.getElementById('menu'),
+        'padding': 256,
+        'tolerance': 70
+      });
+
+      // Toggle button
+      document.querySelector('.toggle-button').addEventListener('click', function() {
+        slideout.toggle();
+      });
+    </script>
+
+      <style>
+      body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+#content header {
+    padding: 15px;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+    color: #767676;
+}
+
+.fa-search {
+    color: #477187;
+}
+
+.slideout-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 256px;
+  min-height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  z-index: 0;
+  display: none;
+  background-color: #FFF; /* A background-color is required */
+}
+
+.slideout-menu-left {
+  left: 0;
+}
+
+.slideout-menu-right {
+  right: 0;
+}
+
+.slideout-panel {
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+  background: #F2F2F2;
+  min-height: 100vh;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+  display: block;
+}
+
+.logo-container img {
+	display: block;
+	margin: 0 auto;
+	border-radius: 100px;
+	height: 40%;
+	width: 40%;
+	border: 3px solid #fff;
+	margin-bottom: 30px;
+}
+
+.logo-container {
+    padding: 50px 0;
+    color: #fff;
+}
+
+.text-center {
+  	text-align: center;
+}
+
+.blog-title {
+    font-size: 20px;
+    display: block;
+}
+
+.blog-description {
+    display: block;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+ul.nav li {
+    text-align: center;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+ul.nav a {
+    display: block;
+    padding: 20px;
+}
+
+ul.nav li a:hover {
+    background-color: #eaeaea;
+}
+
+.menu-bottom-links {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.menu-bottom-links i {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.header {
+    background: rgba(0,0,0,.05);
+    padding: 15px 0px;
+}
+
+h1 {
+    font-size: 2em; 
+}
+
+h2 { 
+    font-size: 1.5em; 
+}
+
+h3 { 
+    font-size: 1.17em; 
+}
+
+h4 { 
+    font-size: 1.12em; 
+}
+
+h5 { 
+    font-size: .83em; 
+}
+
+h6 { 
+    font-size: .75em;
+}
+
+p {
+    line-height: 21px;
+}
+
+.kg-card-markdown img {
+    max-width: 100%;
+    height: auto; 
+}
+
+#posts [class*='grid-'] {
+    float: left;
+}
+
+.post .image {
+    display: block;
+    margin: auto;
+    height: 280px;
+}
+
+.post-details {
+    background: #fff;
+    height: 300px;
+    padding: 0px 30px;
+}
+
+.post-primary-tag {
+    display: block;
+    padding: 25px;
+    background: #fff;
+}
+
+.post h1 {
+    line-height: 40px;
+    height: 120px;
+}
+
+  </style>
+
+
 
         {{!-- This helper will pull in data from the {{contentFor}} helper in other 
         template files. Useful for including scripts on certain pages and they 
