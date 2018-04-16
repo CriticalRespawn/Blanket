@@ -4,20 +4,16 @@ into the {{{body}}} tag of the default.hbs template --}}
 
 {{!-- Everything inside the {post} tags pulls in the specified data for the page you are viewing --}}
 {{#post}}
-<div id="top_content">
+<div class="header">
     <div class="container text-center">
-        <div class="grid">
-            <div class="col-1-2 push-1-4">
-                <h1>{{title}}</h1>
-            </div>    
-        </div>
+        <div class="grid-12">
+            <h1>{{title}}</h1>
+        </div> 
     </div>
 </div>
 <div class="container">
-    <div class="grid">
-        <div class="col-8-12 push-2-12">
-            {{content}}
-        </div>
+    <div class="grid-8">
+        {{content}}
     </div>
 </div>
 {{/post}}

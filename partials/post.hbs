@@ -1,33 +1,13 @@
-<div class="col-1-4 mobile-col-1-1 text-center">
-    <a href="{{{url}}}" class="image-link">
-        <div class="image" style="background: url('{{img_url feature_image absolute="true"}}'); background-size: cover;"></div>
-        <div class="overlay">
-            <div class="text">               
-                <h5>
-                    {{title}} 
-
-                    {{!-- If the post is featured, Blanket shows a star next to the title --}}
-                    {{#if featured}}
-                        <i class="fa fa-star featured"></i>
-                    {{/if}}
-                    
-                    {{!-- If you are changing this date format, you should also 
-                    change it in /post.hbs for consistency --}}
-                    <small>{{date format='DD MMM YYYY'}} | {{reading_time}}</small> 
-
-                    {{!-- Everything inside the {author} tags pulls the specified data from the author --}} 
-                    {{#author}}
-                       
-                            {{!-- It's possible an author doesn't have a profile image, if not, show a placeholder image instead  --}}
-                            {{#if profile_image}}
-                                <img src="{{img_url profile_image}}" class="author-profile-image" alt="{{name}}">
-                            {{else}}
-                                <img src="{{asset "images/no_img.png"}}" class="author-profile-image" alt="{{t "Missing Image"}}">
-                            {{/if}}    
-                       
-                    {{/author}}                                         
-                </h5>
-            </div>
-        </div>        
-    </a>
+<div class="grid-t-4 grid-m-12 text-center post">
+    <div class="image" style="background: url('{{img_url feature_image absolute="true"}}'); background-size: cover; background-position: center center;"></div>
+    {{#primary_tag}}
+    <a href="{{url}}" class="post-primary-tag">{{name}}</a>
+    {{/primary_tag}}
+    <div class="post-details">
+        <h1>{{title}}</h1>
+        <p>{{excerpt characters="100"}}...</p>
+        {{#foreach authors}}
+          {{profile_image}}
+        {{/foreach}}  
+    </div>
 </div> 

@@ -1,13 +1,11 @@
-<div class="grid" id="grid-pagination">
-    <div class="col-1-2 push-1-4">
-        <nav class="pagination">
-            {{#if prev}}     
-                <a class="newer-posts" href="{{page_url prev}}">{{t "Newer"}}</a>
-            {{/if}}           
-                <span class="page-number">{{t "Page"}} {{page}} {{t "of"}} {{pages}}</span>
-            {{#if next}}              
-                <a class="older-posts" href="{{page_url next}}">{{t "Older"}}</a>
-            {{/if}}
-        </nav>
-    </div>
+<div class="grid-12 text-center">
+    <nav class="pagination">
+        {{#if prev}}     
+            <a class="newer-posts" href="{{page_url prev}}">{{t "Newer"}}</a>
+        {{/if}}           
+            <span class="page-number">{{t "Page"}} {{page}} {{t "of"}} {{pages}}</span>
+        {{#if next}}              
+            <a class="older-posts" href="{{page_url next}}">{{t "Older"}}</a>
+        {{/if}}
+    </nav>
 </div>
