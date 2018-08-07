@@ -1,15 +1,6 @@
 # Blanket
 Blanket is an extremely simple and minimalist theme for the [Ghost](http://github.com/tryghost/ghost/).
 
-## Demo
-Blanket covers all the major pages you would find with any theme.
-* [Homepage](https://blanket.jonathanpurvis.co.uk/)
-* [Post](https://blanket.jonathanpurvis.co.uk/etiam/)
-* [Tag Archive](https://blanket.jonathanpurvis.co.uk/tag/getting-started/)
-* [Author Archive](https://blanket.jonathanpurvis.co.uk/author/admin-user/)
-* [Subscribe Page](https://blanket.jonathanpurvis.co.uk/subscribe/)
-* [404 Page](https://blanket.jonathanpurvis.co.uk/404/)
-
 ## Theme Features
 * AMP Support
 * i18n Support
